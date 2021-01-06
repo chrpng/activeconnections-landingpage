@@ -6,6 +6,12 @@ import Layout from '../components/Layout'
 import Reset from '../components/Reset'
 import SEO from '../components/seo'
 
+const SpecialHeading = styled.div`
+	h2 {
+		margin-left: 32px;
+	}
+`
+
 const StyledForm = styled(Form)`
 	label,
 	button {
@@ -24,9 +30,11 @@ const StyledForm = styled(Form)`
 	input,
 	textarea {
 		font-family: 'Open Sans', sans-serif;
+		font-size: 16px;
 		width: 50%;
 		padding: 16px 16px;
 		border-radius: 8px;
+		border-width: 1px;
 		vertical-align: middle;
 		resize: vertical;
 		margin-bottom: 16px;
@@ -48,6 +56,7 @@ const StyledForm = styled(Form)`
 		padding: 16px 32px;
 		background-color: #234daa;
 		border-radius: 4px;
+		border: none;
 		transition: all 0.25s ease-out;
 		display: block;
 		width: max-content;
@@ -107,7 +116,10 @@ const Contact = () => {
 			<Reset />
 			<SEO title='Contact' />
 			<Layout>
-				<h1>Questions? Leave us a message</h1>
+				<SpecialHeading>
+					<h1>Questions?</h1>
+					<h2>Leave us a message.</h2>
+				</SpecialHeading>
 				<Formik
 					initialValues={{
 						name: '',
@@ -131,7 +143,7 @@ const Contact = () => {
 						<Field name="subject" />
 
 						<label htmlFor="message">Message: </label>
-						<Field name="message" component="textarea"/>
+						<Field name="message" component="textarea" placeholder="I was wondering..." />
 						<span className="validation-error"><ErrorMessage name="message" /></span>
 
 						<button type="submit">Send</button>

@@ -17,6 +17,11 @@ const StyledApp = styled.div`
 
 			&:nth-child(2n+1) {
 				background-color: rgba(191, 233, 244, 0.9);
+				background-image: linear-gradient(to bottom right, transparent, transparent 50%, rgba(181, 223, 234, 0.9));
+
+				h1 {
+					color: #234daa;
+				}
 			}
 		}
 	}

@@ -7,7 +7,7 @@ import { AnimatedDarkBlueLinkButton } from '../ui-components'
 import HeroBackground from '../img/lady-dumbells.png'
 
 const StyledHero = styled.div`
-	background-image: linear-gradient(to bottom right, rgba(191, 233, 244, 0.7), rgba(191, 233, 244, 0.9)), url(${HeroBackground});
+	background-image: linear-gradient(to bottom right, rgba(191, 233, 244, 0.7), rgba(191, 233, 244, 0.9)), url(${HeroBackground}) !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
