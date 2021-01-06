@@ -46,8 +46,8 @@ const Hero = () => {
 	return (
 		<StyledHero>
 			<div className="hero--desc">
-				<ScrollAnimation animateIn="fadeInRight" duration="2" offset={100}><h1>Exercise</h1></ScrollAnimation>
-				<ScrollAnimation animateIn="fadeInRight" duration="2" offset={100} delay={500}><h1 className="secondary">for <span className="italic">every</span> body</h1></ScrollAnimation>
+				<ScrollAnimation animateIn="fadeInRight" duration={2} offset={100}><h1>Exercise</h1></ScrollAnimation>
+				<ScrollAnimation animateIn="fadeInRight" duration={2} offset={100} delay={500}><h1 className="secondary">for <span className="italic">every</span> body</h1></ScrollAnimation>
 				<h2>
 					Accessible and inclusive fitness
 				</h2>

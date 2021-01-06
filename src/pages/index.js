@@ -1,14 +1,16 @@
 import React from "react"
 
-import Layout from '../Components/Layout'
-import ResetAndHelmet from '../Components/ResetAndHelmet'
+import Layout from '../components/Layout'
+import Reset from '../components/Reset'
+import SEO from '../components/seo'
 
-import { Hero, Promotion, About, Instructors, Videos } from '../Components'
+import { Hero, Promotion, About, Instructors, Videos } from '../components'
 import './App.css'
 
 export default function index() {
   return <div>
-			<ResetAndHelmet />
+			<Reset />
+			<SEO title="Home" />
 			<Layout>
 				<Hero />
 

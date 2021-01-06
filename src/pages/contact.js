@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
-import Layout from '../Components/Layout'
-import ResetAndHelmet from '../Components/ResetAndHelmet'
+import Layout from '../components/Layout'
+import Reset from '../components/Reset'
+import SEO from '../components/seo'
 
 const StyledForm = styled(Form)`
 	label,
@@ -103,8 +104,10 @@ const Contact = () => {
 
 	return (
 		<div>
-			<ResetAndHelmet />
+			<Reset />
+			<SEO title='Contact' />
 			<Layout>
+				<h1>Questions? Leave us a message</h1>
 				<Formik
 					initialValues={{
 						name: '',
@@ -135,6 +138,7 @@ const Contact = () => {
 					</StyledForm>
 				)}
 				</Formik>
+				<div></div>
 			</Layout>
 		</div>
 	);
