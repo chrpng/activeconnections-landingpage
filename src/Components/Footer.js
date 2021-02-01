@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import BRIDGESLogo from '../img/BRIDGES_Logo_R1.png'
-import ActivePTLogo from '../img/Active PT_logo.png'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 const StyledFooter = styled.footer`
 	padding-top: 48px;
@@ -24,10 +24,6 @@ const StyledFooter = styled.footer`
 		a {
 			text-decoration: none;
 			flex-basis: 50px;
-
-			img {
-				height: 100px;
-			}
 
 			span {
 				color: #16171C;
@@ -66,15 +62,17 @@ const StyledFooter = styled.footer`
 `
 
 const Footer = () => {
+	const data = useStaticQuery(FOOTER_IMAGE)
+
 	return (
 		<StyledFooter>
 			<div className="footer-links">
 				<a href="https://www.bridgesrc.org/">
-					<img src={BRIDGESLogo} alt="BRIDGES logo" />
+					<Img fixed={data.imageOne.childImageSharp.fixed} alt="BRIDGES logo" />
 					<span>BRIDGES</span>
 				</a>
 				<a href="https://activeptandwellness.com/">
-					<img src={ActivePTLogo} alt="Active PT logo" />
+					<Img fixed={data.imageTwo.childImageSharp.fixed} alt="Active PT logo" />
 					<span>Active Physical Therapy</span>
 				</a>
 			</div>
@@ -88,5 +86,29 @@ const Footer = () => {
 		</StyledFooter>
 	);
 }
- 
+
+const FOOTER_IMAGE = graphql`
+	query {
+		imageOne: file(relativePath: { eq: "BRIDGES_Logo_R1.png" }) {
+			childImageSharp {
+				# Specify the image processing specifications right in the query.
+				# Makes it trivial to update as your page's design changes.
+				fixed(height: 100) {
+					...GatsbyImageSharpFixed_withWebp
+				}
+			}
+		}
+
+		imageTwo: file(relativePath: { eq: "Active PT_logo.png" }) {
+			childImageSharp {
+				# Specify the image processing specifications right in the query.
+				# Makes it trivial to update as your page's design changes.
+				fixed(height: 100) {
+					...GatsbyImageSharpFixed_withWebp
+				}
+			}
+		}
+	}
+`
+
 export default Footer;

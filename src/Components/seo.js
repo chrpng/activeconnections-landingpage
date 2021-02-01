@@ -11,7 +11,10 @@ function SEO({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
-            author
+						author
+						siteUrl: url
+						defaultImage: image
+						twitterUsername
           }
         }
       }
@@ -19,7 +22,6 @@ function SEO({ description, lang, meta, title }) {
 	)
 	
 	const metaDescription = description || site.siteMetadata.description
-	// const metaTitle = title || site.siteMetadata.title
 	
   return (
     <Helmet
@@ -35,7 +37,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: `${title} | ${site.siteMetadata.title}`,
         },
         {
           property: `og:description`,
@@ -45,26 +47,40 @@ function SEO({ description, lang, meta, title }) {
           property: `og:type`,
           content: `website`,
         },
+				{
+					name: `og:image`,
+					content: `${site.siteMetadata.siteUrl}${site.siteMetadata.defaultImage}`,
+				},
         {
           name: `twitter:card`,
           content: `summary`,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          name: `twitter:site`,
+          content: site.siteMetadata.twitterUsername,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: `${title} | ${site.siteMetadata.title}`,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
         },
+				{
+					name: `twitter:image`,
+					content: `${site.siteMetadata.siteUrl}${site.siteMetadata.defaultImage}`,
+				},
+				{
+					name: `twitter:image:alt`,
+					content: `Active Connections logo`,
+				}
       ].concat(meta)}
     >
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+			<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" media="print" onload="this.media='all'"/>
 		</Helmet>
   )
 }

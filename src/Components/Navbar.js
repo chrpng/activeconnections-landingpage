@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-import ActiveConnectionsLogo from '../img/ActiveConnections.png'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 export const navHeight = '100px'
 
@@ -57,9 +58,10 @@ const StyledNav = styled.nav`
 `
 
 const Navbar = () => {
+	const data = useStaticQuery(NAVBAR_LOGO)
 	return (
 		<StyledNav>
-			<a className="home-image" href="/" ><img src={ActiveConnectionsLogo} alt="navlogo" /></a>
+			<a className="home-image" href="/" ><Img fixed={data.image.childImageSharp.fixed} alt="navlogo" /></a>
 			
 			<div className="links">
 				<Link to="/#about-anchor">About</Link>
@@ -68,5 +70,19 @@ const Navbar = () => {
 		</StyledNav>
 	)
 }
+
+const NAVBAR_LOGO = graphql`
+	query {
+		image: file(relativePath: { eq: "ActiveConnections.png" }) {
+			childImageSharp {
+				# Specify the image processing specifications right in the query.
+				# Makes it trivial to update as your page's design changes.
+				fixed(height: 76) {
+					...GatsbyImageSharpFixed_withWebp
+				}
+			}
+		}
+	}
+`
  
 export default Navbar

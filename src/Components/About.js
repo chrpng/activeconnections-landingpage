@@ -2,28 +2,41 @@ import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 import styled from 'styled-components'
 
-import AboutImage from '../img/group-exercise.png'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import { navHeight } from './Navbar'
 
+const BgImg = styled(Img)`
+  position: absolute;
+	height: 100%;
+  top: 0;
+  right: 0;
+`
+
 const StyledAbout = styled.div`
 	display: flex;
-	align-items: center;
+	align-items: stretch;
 	position: relative;
 	scroll-margin-top: ${navHeight};
+	padding: 0 !important;
 
 	> * {
 		flex: 1 1 500px;
 	}
 	
+	.about--desc {
+		padding: 64px 96px;
+	}
+
 	.about--image {
-		margin-left: 96px;
-		flex-basis: 50%;
+		flex-basis: 30%;
+		@media (max-width: 1200px) {
+			flex-basis: 40%;
+		}
+
 		.fadeInRightSm {
 			animation: fadeInRightSm 1s;
-		}
-		img {
-			width: 100%;
 		}
 	}
 
@@ -49,6 +62,8 @@ const StyledAbout = styled.div`
 `
 
 const About = () => {
+	const data = useStaticQuery(ABOUT_IMAGE)
+
 	return (
 		<StyledAbout id="about-anchor">
 			<div className="about--desc">
@@ -84,12 +99,28 @@ const About = () => {
 				</ScrollAnimation>
 			</div>
 			<div className="about--image">
-				<ScrollAnimation animateIn="fadeInRightSm" offset={300}>
-					<img src={AboutImage} alt="group exercise"/>
-				</ScrollAnimation>
+				<BgImg
+					imgStyle={{ objectPosition: "75%" }}
+					fluid={data.image.childImageSharp.fluid}
+					alt="group exercise"
+				/>
 			</div>
 		</StyledAbout>
 	);
 }
+
+const ABOUT_IMAGE = graphql`
+	query {
+		image: file(relativePath: { eq: "group-exercise.png" }) {
+			childImageSharp {
+				# Specify the image processing specifications right in the query.
+				# Makes it trivial to update as your page's design changes.
+				fluid(maxWidth: 1500) {
+					...GatsbyImageSharpFluid_withWebp
+				}
+			}
+		}
+	}
+`
  
 export default About;

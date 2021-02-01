@@ -1,6 +1,24 @@
 import styled from 'styled-components'
 
-export const DarkBlueLinkButton = styled.a`
+export const DarkBlueLink = styled.a`
+	margin: ${props => props.margin || 0};
+	
+	color: #234daa;
+	padding: 16px 0;
+	transition: all 0.25s ease-out;
+	display: block;
+	width: max-content;
+
+	position: relative;
+
+	&:hover {
+		color: #9CB9DC;
+	}
+`
+
+export const DarkBlueFillLink = styled.a`
+	margin: ${props => props.margin || 0};
+
 	color: white;
 	text-decoration: none;
 	padding: 16px 32px;
@@ -17,7 +35,7 @@ export const DarkBlueLinkButton = styled.a`
 	}
 `
 
-export const AnimatedDarkBlueLinkButton = styled(DarkBlueLinkButton)`
+export const AnimatedDarkBlueFillLink = styled(DarkBlueFillLink)`
 	&:hover {
 		&::before {
 			width: 0;
