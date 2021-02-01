@@ -38,13 +38,13 @@ const Videos = () => {
 			</ScrollAnimation>
 			<div className="videos--grid">
 				<div>
-					<iframe title="Wrist Prep Routine" src="https://www.youtube.com/embed/mSZWSQSSEjE"></iframe>
+					<iframe title="Yoga" src="https://www.youtube.com/embed/EFTNYtRxhtE"></iframe>
 				</div>
 				<div>
-					<iframe title="Posture correction" src="https://www.youtube.com/embed/LT_dFRnmdGs"></iframe>
+					<iframe title="Zumba, Yoga, and Tai Chi" src="https://www.youtube.com/embed/Ad0mqQgTTgE"></iframe>
 				</div>
 				<div>
-					<iframe title="Pushups" src="https://www.youtube.com/embed/QGCW-jL1O4s"></iframe>
+					<iframe title="Upper Body" src="https://www.youtube.com/embed/PkXi6ygU8ak"></iframe>
 				</div>
 			</div>
 		</StyledVideos>
