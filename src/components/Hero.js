@@ -43,10 +43,27 @@ const StyledHero = styled.div`
 		h2 {
 			padding-bottom: 16px;
 		}
+
+		.button-container {
+			display: flex;
+			justify-content: space-between;
+			> div:not(:first-child) {
+				margin-left: 64px;
+			}
+		}
 	}
 
 	@media only screen and (max-width: 768px) { /* tablets */
 		height: 100vh;
+
+		.hero--desc .button-container {
+			> div {
+				justify-content: space-between;
+				&:not(:first-child) {
+					margin-left: 0px;
+				}
+			}
+		}
 	}
 `
 
@@ -69,8 +86,15 @@ const Hero = () => {
 				<h2>
 					Accessible and inclusive fitness
 				</h2>
-				<AnimatedDarkBlueFillLink href={registrationPDF} target="_blank">Join Now!</AnimatedDarkBlueFillLink>
-				<DarkBlueLink href={registrationPDF} download>Direct download</DarkBlueLink>
+				<div className="button-container">
+					<div className="register">
+						<AnimatedDarkBlueFillLink href={registrationPDF} target="_blank">Register Now</AnimatedDarkBlueFillLink>
+						<DarkBlueLink href={registrationPDF} download>Form (direct download)</DarkBlueLink>
+					</div>
+					<div>
+						<AnimatedDarkBlueFillLink href="https://go.gymgo.com/active-connections">Log in</AnimatedDarkBlueFillLink>
+					</div>
+				</div>
 			</div>
 		</StyledHero>
 	);
