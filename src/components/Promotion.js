@@ -65,7 +65,7 @@ const Promotion = () => {
 					<li><strong>Free</strong> Exercise Gear (valued at $28)</li>
 					<li>Live Exercise Sessions</li>
 					<li>Unlimited access to an online library of customized exercise videos</li>
-					<li> </li>
+					<br/>
 					<li><strong>Free</strong> for 3 months</li>
 					<li>Months 4 – 12: Starting at $5/month</li>
 				</ul>
