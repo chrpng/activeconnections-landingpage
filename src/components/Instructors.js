@@ -7,7 +7,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import InstructorCard from './InstructorCard'
 
 const StyledInstructors = styled.div`
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 50px;
 
 	.instructors--card {
@@ -40,7 +41,7 @@ const StyledInstructors = styled.div`
 		}
 	}
 
-	@media (max-width: 1200px) { /* large devices */
+	@media (max-width: 992px) { /* large devices */
 		display: block;
 
 		[class$="--card"] {
@@ -84,6 +85,13 @@ const Instructors = () => {
 						Connections as an registered/licensed Occupational Therapist and looks forward to assisting all members 
 						in their holistic pursuit of wellness goals."
 				/>
+				<InstructorCard
+					fixedImg={data.imageFour.childImageSharp.fixed}
+					name="Richard Serrano"
+					description="Rich has more than 15 years of experience as a physical therapist and is the director and 
+						owner of Active PT & Wellness. His philosophy is “NO pain, Big Gain“. Rich loves the people he serves 
+						and loves helping them achieve their goals. He loves learning new things."
+				/>
 			</StyledInstructors>
 		</div>
 	);
@@ -100,7 +108,6 @@ const CLINICIAN_IMAGE = graphql`
 				}
 			}
 		}
-
 		imageTwo: file(relativePath: { eq: "ClinicianCatherineDoolan.png" }) {
 			childImageSharp {
 				# Specify the image processing specifications right in the query.
@@ -110,8 +117,16 @@ const CLINICIAN_IMAGE = graphql`
 				}
 			}
 		}
-
 		imageThree: file(relativePath: { eq: "ClinicianAsherCollins.png" }) {
+			childImageSharp {
+				# Specify the image processing specifications right in the query.
+				# Makes it trivial to update as your page's design changes.
+				fixed(height: 200) {
+					...GatsbyImageSharpFixed_withWebp
+				}
+			}
+		}
+		imageFour: file(relativePath: { eq: "ClinicianRichardSerrano.png" }) {
 			childImageSharp {
 				# Specify the image processing specifications right in the query.
 				# Makes it trivial to update as your page's design changes.
