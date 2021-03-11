@@ -27,6 +27,10 @@ const StyledAbout = styled.div`
 	
 	.about--desc {
 		padding: 64px 96px;
+
+		@media (max-width: 768px) { /* tablets */
+			padding: 16px 16px 0 16px;
+		}
 	}
 
 	.about--image {

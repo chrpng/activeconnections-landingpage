@@ -5,10 +5,6 @@ import Promotion from './Promotion'
 import { CloseButton } from '../ui-components'
 import Modal from 'react-modal';
 
-import { AnimatedDarkBlueFillLink, DarkBlueLink } from '../ui-components'
-
-import registrationPDF from '../file/Registration_Form_-_Active_Connections_12-07-2020.pdf'
-
 const customStyles = {
   content : {
     top                   : '50%',
@@ -112,8 +108,6 @@ const PromotionModal = () => {
 			>
 				<CloseButton onClick={handleClose}>&times;</CloseButton>
 				<Promotion />
-				<AnimatedDarkBlueFillLink margin="auto" href="https://go.gymgo.com/active-connections">Join Now!</AnimatedDarkBlueFillLink>
-				<DarkBlueLink margin="auto" href={registrationPDF} download>Direct download</DarkBlueLink>
 			</Modal>
 		</div>
 	);

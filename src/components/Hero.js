@@ -7,7 +7,7 @@ import Img from 'gatsby-image'
 
 import { AnimatedDarkBlueFillLink, DarkBlueLink } from '../ui-components'
 
-import registrationPDF from '../file/Registration_Form_-_Active_Connections_12-07-2020.pdf'
+import registrationPDF from '../file/Registration Form - Active Connections 3-10-2021[7022].pdf'
 
 const StyledHero = styled.div`
 	padding: 0 240px;

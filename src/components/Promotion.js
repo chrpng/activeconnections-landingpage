@@ -4,6 +4,10 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
+import { AnimatedDarkBlueFillLink, DarkBlueLink } from '../ui-components'
+
+import registrationPDF from '../file/Registration Form - Active Connections 3-10-2021[7022].pdf'
+
 const StyledPromotion = styled.div`
 	display: flex;
 	align-items: center;
@@ -58,7 +62,9 @@ const Promotion = () => {
 				<h1>
 					Promotion
 				</h1>
-				<p>We are pleased to offer a special introductory package that includes a free tablet and exercise gear to the first 100 members:</p>
+				<p>BRIDGES and Active Physical Therapy & Wellness Center are proud to announce they have partnered to open Rockland County’s only universal fitness center, <em>Active Connections</em>.</p>
+				<p><em>Active Connections</em> currently offers a virtual gym with live classes and unlimited access to a library of customized exercise videos.  Each individual will receive a personalized physical assessment/fitness evaluation performed by licensed, trained clinicians.  An exercise program will be designed for you based upon your own unique needs.  Classes will be led by trained professionals.</p>
+				<p>We are pleased to offer a special introductory package that includes a free tablet and exercise gear to the <strong>first 100 members</strong>:</p>
 				<ul>
 					<li>Personalized Assessment/Evaluation in your home</li>
 					<li><strong>Free</strong> Amazon Fire Tablet (valued at $150)</li>
@@ -71,6 +77,10 @@ const Promotion = () => {
 				</ul>
 
 				<p>Coming Soon: In-person fitness classes using adaptive equipment (for an additional fee)</p>
+				<p>Please complete the enclosed Registration Form and return it to BRIDGES at 2290 Palisades Center Drive, West Nyack, NY 10994 as soon as possible.</p>
+
+				<AnimatedDarkBlueFillLink margin="auto" href={registrationPDF} target="_blank">Register Now!</AnimatedDarkBlueFillLink>
+				<DarkBlueLink margin="auto" href={registrationPDF} download>Direct download</DarkBlueLink>
 			</div>
 		</StyledPromotion>
 	);
