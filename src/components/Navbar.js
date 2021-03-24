@@ -65,6 +65,7 @@ const Navbar = () => {
 			
 			<div className="links">
 				<Link to="/#about-anchor">About</Link>
+				<Link to="/faq">FAQ</Link>
 				<Link to="/contact">Contact</Link>
 			</div>
 		</StyledNav>
