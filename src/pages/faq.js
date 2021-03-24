@@ -75,12 +75,12 @@ const FAQ = ({ data }) => {
 
 					<h2>How do I make an account?</h2>
 					<p>
-						The GymGo team has created a helpful guide for account creation (skip to 1:30). If an account was made for you by Active Connections staff, please wait 1-2 days to receive an email with instructions on how to create your account.
+						The GymGo team has created a helpful guide for account creation (skip to 0:30). If an account was made for you by Active Connections staff, please wait 1-2 days to receive an email with instructions on how to create your account.
 					</p>
 
 					<h2>How can I access the videos?</h2>
 					<p>
-						The GymGo team has created a helpful guide to locate your video library (skip to 1:30). Navigate to your account details and select “My Videos and Files” to view a specific workout. 
+						The GymGo team has created a helpful guide to locate your video library (skip to 4:50). Navigate to your account details and select “My Videos and Files” to view a specific workout. 
 					</p>
 					<StyledSplitDiv>
 						<Img fixed={data.accessImg.childImageSharp.fixed} />
