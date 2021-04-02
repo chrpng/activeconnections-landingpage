@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 import { CircleImgContainer } from '../ui-components'
 
-const InstructorCard = ({ fixedImg, name, description}) => {
+const InstructorCard = ({ fixedImg, name, subtitle, description}) => {
 	return (
 		<div className="instructors--card">
 			<ScrollAnimation animateIn="fadeIn" offset={200}>
@@ -19,6 +19,7 @@ const InstructorCard = ({ fixedImg, name, description}) => {
 			<ScrollAnimation animateIn="fadeIn" offset={200}>
 				<div className="instructors--card--desc">
 					<h2>{name}</h2>
+					<h3>{subtitle}</h3>
 					<p>
 						{description}
 					</p>

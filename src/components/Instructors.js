@@ -92,6 +92,27 @@ const Instructors = () => {
 						owner of Active PT & Wellness. His philosophy is “NO pain, Big Gain“. Rich loves the people he serves 
 						and loves helping them achieve their goals. He loves learning new things."
 				/>
+				<InstructorCard
+					fixedImg={data.imageFive.childImageSharp.fixed}
+					name="Terry Fiore Lavery, RYT"
+					description="Terry is a fitness instructor with the SilverSneakers Fitness Program, as well as a certified 
+						Enhance Fitness instructor with the YMCA. She has a 200-hour yoga certification from the New Age Center 
+						in Nyack with Paula Heitzner, as well as an additional 200-hour yoga certification from Kundalini Yoga 
+						East in Manhattan. She is the editor and on the board of the Yoga Teachers Association of the Hudson Valley. 
+						Terry is also certified to teach Pilates from IM=X Pilates and water aerobics from the Aquatic Exercise Association. 
+						In 2015, Terry obtained her TESOL certification from Westchester Community College and has been teaching English 
+						as a Second Language since. She is also a medical editor."
+				/>
+				<InstructorCard
+					fixedImg={data.imageSix.childImageSharp.fixed}
+					name="Franky Simon"
+					subtitle="Founder of SimonSays Fitness, NASM CPT, NASM Nutritional Specialist"
+					description={`
+						Franky’s main focus is to help people incorporate fitness into their 
+						lifestyle. Create a program for them that involves stability, strength, 
+						and power. To keep them showing up consistently so they can achieve 
+						their health goals.`}
+				/>
 			</StyledInstructors>
 		</div>
 	);
@@ -127,6 +148,24 @@ const CLINICIAN_IMAGE = graphql`
 			}
 		}
 		imageFour: file(relativePath: { eq: "ClinicianRichardSerrano.png" }) {
+			childImageSharp {
+				# Specify the image processing specifications right in the query.
+				# Makes it trivial to update as your page's design changes.
+				fixed(height: 200) {
+					...GatsbyImageSharpFixed_withWebp
+				}
+			}
+		}
+		imageFive: file(relativePath: { eq: "ClinicianTerryFioreLavery.png" }) {
+			childImageSharp {
+				# Specify the image processing specifications right in the query.
+				# Makes it trivial to update as your page's design changes.
+				fixed(height: 200) {
+					...GatsbyImageSharpFixed_withWebp
+				}
+			}
+		}
+		imageSix: file(relativePath: { eq: "ClinicianFrankySimon.png" }) {
 			childImageSharp {
 				# Specify the image processing specifications right in the query.
 				# Makes it trivial to update as your page's design changes.
