@@ -6,7 +6,7 @@ import Img from 'gatsby-image'
 
 import { AnimatedDarkBlueFillLink, DarkBlueLink } from '../ui-components'
 
-import registrationPDF from '../file/Registration Form - Active Connections 3-10-2021[7022].pdf'
+import { registrationPDF } from '../file'
 
 const StyledPromotion = styled.div`
 	display: flex;

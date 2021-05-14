@@ -1,0 +1,1 @@
+export { default as registrationPDF } from './Active_Connections_Registration_Form_052021.pdf'
