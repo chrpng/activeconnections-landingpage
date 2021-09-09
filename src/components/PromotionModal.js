@@ -110,7 +110,7 @@ const PromotionModal = () => {
 	return (
 		<div>
 			<SpecialOfferButton onClick={handleShow}>
-				<div>Special Offer!</div>
+				<div>Giveaway Offer!</div>
 			</SpecialOfferButton>
 			<Modal
 				isOpen={show}
