@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
-import Promotion from './Promotion'
+// import Giveaway from './Promotion'
+import Giveaway from './Giveaway'
 import { CloseButton } from '../ui-components'
 import Modal from 'react-modal';
 
 const customStyles = {
-  content : {
+  content: {
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
@@ -14,12 +15,16 @@ const customStyles = {
     marginRight           : '-50%',
 		transform             : 'translate(-50%, -50%)',
 		borderRadius					: '24px'
-  }
+  },
+	overlay: {
+		zIndex: 10,
+	}
 };
 
 const SpecialOfferButton = styled.button`
 	position: fixed;
 	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -93,7 +98,14 @@ const PromotionModal = () => {
 	const [ show, setShow ] = useState(false);
 
 	const handleShow = () => setShow(true);
-	const handleClose = () => setShow(false);
+	const handleClose = () => {
+		setShow(false);
+		sessionStorage.setItem('firstVisit', true);
+	}
+
+	useEffect(() => {
+		if (!sessionStorage.getItem('firstVisit')) setShow(true);
+	}, []);
 
 	return (
 		<div>
@@ -107,7 +119,7 @@ const PromotionModal = () => {
 				contentLabel="Promotion"
 			>
 				<CloseButton onClick={handleClose}>&times;</CloseButton>
-				<Promotion />
+				<Giveaway />
 			</Modal>
 		</div>
 	);

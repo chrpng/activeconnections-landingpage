@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
+import Video from './Video'
 import { navHeight } from './Navbar'
 
 const BgImg = styled(Img)`
@@ -100,6 +101,9 @@ const About = () => {
 					assessment/fitness evaluation performed by licensed, trained clinicians.  An exercise program 
 					will be designed for you based upon your own unique needs.  Classes will be led by trained professionals.  
 				</p>
+				</ScrollAnimation>
+				<ScrollAnimation animateIn="fadeIn" offset={200}>
+					<Video title="Active Connections Commercial" src="https://www.youtube.com/embed/Njvgy0p56Q4" />
 				</ScrollAnimation>
 			</div>
 			<div className="about--image">

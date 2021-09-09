@@ -43,7 +43,7 @@ const StyledNav = styled.nav`
 		}
 	}
 
-	@media (max-width: 992px) { /* large devices */
+	@media (max-width: 992px) {
 		position: static;
 	}
 
