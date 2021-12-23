@@ -72,7 +72,7 @@ const Promotion = () => {
 					<li>Live Exercise Sessions</li>
 					<li>Unlimited access to an online library of customized exercise videos</li>
 					<br/>
-					<li><strong>Free</strong> for 1 month</li>
+					<li><strong>Free</strong> for 2 weeks</li>
 					<li>After the free period, membership is $5/month</li>
 				</ul>
 
