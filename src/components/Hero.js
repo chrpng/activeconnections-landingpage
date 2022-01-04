@@ -92,7 +92,7 @@ const Hero = () => {
 						<DarkBlueLink href={registrationPDF} download>Form (direct download)</DarkBlueLink>
 					</div>
 					<div>
-						<AnimatedDarkBlueFillLink href="https://go.gymgo.com/active-connections">Log in</AnimatedDarkBlueFillLink>
+						<AnimatedDarkBlueFillLink href="https://activeconnections.intelivideo.com/">Log in</AnimatedDarkBlueFillLink>
 					</div>
 				</div>
 			</div>
