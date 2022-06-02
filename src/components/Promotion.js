@@ -77,7 +77,7 @@ const Promotion = () => {
 				</ul>
 
 				<p>Coming Soon: In-person fitness classes using adaptive equipment (for an additional fee)</p>
-				<p>Please complete the enclosed Registration Form and return it to BRIDGES at 2290 Palisades Center Drive, West Nyack, NY 10994 as soon as possible.</p>
+				<p>Please complete the enclosed Registration Form and email to Active Physical Therapy & Wellness Center at <strong>activeconnectionsrc@gmail.com</strong> as soon as possible.</p>
 
 				<AnimatedDarkBlueFillLink margin="auto" href={registrationPDF} target="_blank">Register Now!</AnimatedDarkBlueFillLink>
 				<DarkBlueLink margin="auto" href={registrationPDF} download>Direct download</DarkBlueLink>

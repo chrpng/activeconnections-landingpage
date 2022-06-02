@@ -1,5 +1,4 @@
 import React from "react"
-import PromotionModal from './PromotionModal'
 import { Navbar, Footer } from './'
 
 import { navHeight } from './Navbar'
@@ -50,7 +49,6 @@ export default function Layout({ children }) {
 				{children}
 			</main>
 			<Footer />
-			<PromotionModal />
 		</StyledApp>
   )
 }
